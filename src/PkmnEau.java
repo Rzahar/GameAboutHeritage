@@ -2,10 +2,11 @@
 public class PkmnEau extends Pokemon {
 	// On défini les forces et faiblesses en fonction du type de pokemon adversaire
 	// (eau>feu>plante>eau)
-	double AtkSuperEfficace;
-	double AtkPeuEfficace;
+	double AtkSuperEfficace = this.getAtk()*2;
+	double AtkPeuEfficace = this.getAtk() *0.5;
 
-	public PkmnEau() {
+	public PkmnEau(String nom, int hp, int atk) {
+		super(nom, hp, atk);
 	};
 
 	public PkmnEau(double AtkSuperEfficace, double AtkPeuEfficace) {

@@ -53,7 +53,10 @@ public class Pokemon {
 	
 	// On créé la méthode "attaquer" qui servira à calculer la différence entre l'attaque de l'attaquant et les pv du défenseur
 	public double attaquer(Pokemon pokemon) {
-		double result = pokemon.hp - this.hp;
+		double result = pokemon.hp - this.atk;
+		System.out.println(this.atk);
+		System.out.println(pokemon.hp);
+		System.out.println("il reste " + pokemon.hp + " points de vie.");
 		return result;
 	}
 
