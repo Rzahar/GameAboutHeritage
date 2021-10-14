@@ -4,16 +4,21 @@ public class PkmnPlante extends Pokemon {
 	// (eau>feu>plante>eau)
 	double AtkSuperEfficace = this.getAtk()*2;
 	double AtkPeuEfficace = this.getAtk() *0.5;
+	String type = "Plante";
 
-	public PkmnPlante(String nom, int hp, int atk) {
-		super(nom, hp, atk);
+	public PkmnPlante(String type, String nom, int hp, int atk) {
+		super(type, nom, hp, atk);
 	};
 
-	public PkmnPlante(double AtkSuperEfficace, double AtkPeuEfficace) {
+	public PkmnPlante(double AtkSuperEfficace, double AtkPeuEfficace, String type) {
 		this.AtkSuperEfficace = AtkSuperEfficace;
 		this.AtkSuperEfficace = AtkPeuEfficace;
+		this.type = type;
 	}
 
+	public String getType() {
+		return type;
+	}
 	public double getAtkSuperEfficace() {
 		return AtkSuperEfficace;
 	}
@@ -30,9 +35,21 @@ public class PkmnPlante extends Pokemon {
 		AtkPeuEfficace = atkPeuEfficace;
 	}
 
+	public double attaquer(Pokemon pokemon) {
+		double result = 0;
+		if (pokemon.getType() == "Eau" || pokemon.getType() == "Plante") {
+			result = (pokemon.getHp() - this.AtkPeuEfficace);
+		} else if (pokemon.getType() == "Eau") {
+			result = (pokemon.getHp() - this.AtkSuperEfficace);
+		} else {
+			result = (pokemon.getHp() - this.getAtk());
+		}
+		return result;
+	}
+
 	@Override
 	public String toString() {
-		return "PkmnPlante [AtkSuperEfficace=" + AtkSuperEfficace + ", AtkPeuEfficace=" + AtkPeuEfficace + "]";
+		return "PkmnPlante [type=" + type + "]";
 	}
 
 }

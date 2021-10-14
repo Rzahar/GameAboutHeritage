@@ -4,13 +4,14 @@ public class Pokemon {
 	private String nom;
 	private int hp;
 	private int atk;
-
+	String type;
 	// Définition de la méthode Pokemon
 	public Pokemon() {
 	};
 
-	public Pokemon(String nom, int hp, int atk) {
+	public Pokemon(String type, String nom, int hp, int atk) {
 		super();
+		this.type = type;
 		this.nom = nom;
 		this.hp = hp;
 		this.atk = atk;
@@ -19,9 +20,13 @@ public class Pokemon {
 	
 	// On créé des setters et getter pour récupérer les informations ou pour intéragir avec elles
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
+	public String getType() {
+		return this.type;
+	}
+	
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -54,12 +59,13 @@ public class Pokemon {
 	// On créé la méthode "attaquer" qui servira à calculer la différence entre l'attaque de l'attaquant et les pv du défenseur
 	public double attaquer(Pokemon pokemon) {
 		double result = pokemon.hp - this.atk;
-		System.out.println(this.atk);
-		System.out.println(pokemon.hp);
-		System.out.println("il reste " + pokemon.hp + " points de vie.");
+		System.out.println("il reste " + result + " points de vie.");
 		return result;
 	}
-
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Pokemon [nom=" + nom + ", hp=" + hp + ", atk=" + atk + "]";
