@@ -16,6 +16,7 @@ public class PkmnFeu extends Pokemon  {
 		this.type = type;
 	}
 
+	// On initie les methodes get/set
 	public double getAtkSuperEfficace() {
 		return AtkSuperEfficace;
 	}
@@ -32,6 +33,7 @@ public class PkmnFeu extends Pokemon  {
 		AtkPeuEfficace = atkPeuEfficace;
 	}
 	
+	// On défini les forces/faiblesses en fonction du type
 	public double attaquer(Pokemon pokemon) {
 		double result = 0;
 		if (pokemon.getType() == "Eau" || pokemon.getType() == "Feu") {
