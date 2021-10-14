@@ -38,10 +38,13 @@ public class PkmnFeu extends Pokemon  {
 		double result = 0;
 		if (pokemon.getType() == "Eau" || pokemon.getType() == "Feu") {
 			result = (pokemon.getHp() - this.AtkPeuEfficace);
+			pokemon.setHp((int) result);
 		} else if (pokemon.getType() == "Plante") {
 			result = (pokemon.getHp() - this.AtkSuperEfficace);
+			pokemon.setHp((int) result);
 		} else {
 			result = (pokemon.getHp() - this.getAtk());
+			pokemon.setHp((int) result);
 		}
 		return result;
 	}
