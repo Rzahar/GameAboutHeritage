@@ -16,6 +16,32 @@ public class Pokemon {
 		this.atk = atk;
 	}
 
+	
+	// On créé des setters et getter pour récupérer les informations ou pour intéragir avec elles
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+
 	// On écrit la méthode "isDead" qui renverra true si les pv tombent à 0
 	public boolean isDead() {
 		if (hp == 0) {
